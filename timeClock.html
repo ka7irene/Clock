@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h2>Current time</h2>
+        <div id="clock"></div>
+    </center>
+
+    <script>
+        // Function to update the clock
+        function updateClock() {
+            const currentTime = new Date(); // Gets the current time
+            
+            // Setting the format: HH:MM:SS
+            const hours = currentTime.getHours().toString().padStart(2, '0');
+            const minutes = currentTime.getMinutes().toString().padStart(2, '0');
+            const seconds = currentTime.getSeconds().toString().padStart(2, '0');
+
+            // Displaying the time for clock   
+            const clockDiv = document.getElementById('clock');
+            clockDiv.textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        // Updating the clock
+        updateClock();
+
+        // Updating clock every second
+        setInterval(updateClock, 1000);
+
+    </script>
+</body>
+</html>
